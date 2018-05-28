@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "protocolVersion": "2.10",
+  "serialNumber": 1,
+  "primarySite": true,
+  "multiPrimary": false,
+  "attributes": [
+    {
+      "name": "desc",
+      "value": "LHS 1"
+    }
+  ],
+  "servers": [
+    {
+      "serverId": 1,
+      "address": "10.5.0.101",
+      "publicKey": {
+        "format": "key",
+        "value": {
+          "kty": "DSA",
+          "y": "_KOVSzWVaTLK1ATtq-77Zz6PSqEOu1fwxwAy83qCBSl_E-mMupwl6TGopEnnIxV-ydxxqHsyH-J-bN0zTc66h4GnObHXwEYmACHVTnRK2gwW2STS31GcjlC6VW4EVxj5Rx1ORKdETEb5DUbou-4hLCCtil9GJVtyYur0k65v8_s",
+          "p": "_X9TgR11EilS30qcLuzk5_YRt1I870QAwx4_gLZRJmlFXUAiUftZPY1Y-r_F9bow9subVWzXgTuAHTRv8mZgt2uZUKWkn5_oBHsQIsJPu6nX_rfGG_g7V-fGqKYVDwT7g_bTxR7DAjVUE1oWkTL2dfOuK2HXKu_yIgMZndFIAcc",
+          "q": "l2BQjxUjC8yykrmCouuEC_BYHPU",
+          "g": "9-GghdabPd7LvKtcNrhXuXmUr7v6OuqC-VdMCz0HgmdRWVeOutRZT-ZxBxCBgLRJFnEj6EwoFhO3zwkyjMim4TwWeotUfI0o4KOuHiuzpnWRbqN_C_ohNWLx-2J6ASQ7zKTxvqhRkImog9_hWuWfBpKLZl6Ae1UlZAFMO_7PSSo"
+        }
+      },
+      "interfaces": [
+        {
+          "query": true,
+          "admin": false,
+          "protocol": "UDP",
+          "port": 2641
+        },
+        {
+          "query": true,
+          "admin": true,
+          "protocol": "TCP",
+          "port": 2641
+        },
+        {
+          "query": true,
+          "admin": true,
+          "protocol": "HTTP",
+          "port": 8000
+        }
+      ]
+    }
+  ]
+}

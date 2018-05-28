@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  handle_server:
+    image: handle_svr
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "2641:2641/udp"
+      - "2641:2641/tcp"
+      - "8000:8000/tcp"
+    networks:
+      handle:
+        ipv4_address: 10.5.0.101
+
+networks:
+  handle:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1
