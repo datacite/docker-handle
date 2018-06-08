@@ -16,10 +16,17 @@ OUT_DIR = sys.argv[2]
 
 # Config options
 config = {
+    'SERVER_ADMIN_FULL_ACCESS': os.getenv('SERVER_ADMIN_FULL_ACCESS', 'yes'),
+    'CASE_SENSITIVE': os.getenv('CASE_SENSITIVE', 'no'),
+    'MAX_SESSION_TIME': os.getenv('MAX_SESSION_TIME', 86400000),
+    'MAX_AUTH_TIME': os.getenv('MAX_AUTH_TIME', 60000),
+    'THIS_SERVER_ID': os.getenv('THIS_SERVER_ID', 1),
+    'TRACE_RESOLUTION': os.getenv('TRACE_RESOLUTION', 'no'),
+    'ALLOW_LIST_HDLS': os.getenv('TRACE_RESOLUTION', 'yes'),
+    'ALLOW_RECURSION': os.getenv('ALLOW_RECURSION', 'no'),
     'SERVER_ADMINS': ' '.join(['"%s"'%s for s in os.getenv('SERVER_ADMINS').split(" ")]),
     'REPLICATION_ADMINS': ' '.join(['"%s"'%s for s in os.getenv('REPLICATION_ADMINS').split(" ")]),
-    'HOST_IP': os.getenv('HOST_IP'),
-    'ALLOW_RECURSION': os.getenv('ALLOW_RECURSION', 'no'),
+    'HANDLE_HOST_IP': os.getenv('HANDLE_HOST_IP'),
     'SERVER_PRIVATE_KEY_PEM': os.getenv('SERVER_PRIVATE_KEY_PEM', '').encode('ASCII'), # Explict convert to byte string
     'SERVER_PUBLIC_KEY_PEM': os.getenv('SERVER_PUBLIC_KEY_PEM', '').encode('ASCII') # Explict convert to byte string
 }

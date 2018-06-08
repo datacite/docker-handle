@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
   handle_server:
@@ -13,11 +13,11 @@ services:
       - "8000:8000/tcp"
     networks:
       handle:
-        ipv4_address: 10.5.0.101
+        ipv4_address: "${HANDLE_HOST_IP:?No Host IP address specified}"
     environment:
       SERVER_ADMINS: '300:200/23'
       REPLICATION_ADMINS: '300:200/23'
-      HOST_IP: '10.5.0.101'
+      HANDLE_HOST_IP: "${HANDLE_HOST_IP:?No Host IP address specified}"
       ALLOW_RECURSION: 'yes'
       SERVER_PRIVATE_KEY_PEM: "-----BEGIN PRIVATE KEY-----\r\nMIIBSwIBADCCASwGByqGSM44BAEwggEfAoGBAP1/U4EddRIpUt9KnC7s5Of2EbdSPO9EAMMeP4C2\r\nUSZpRV1AIlH7WT2NWPq/xfW6MPbLm1Vs14E7gB00b/JmYLdrmVClpJ+f6AR7ECLCT7up1/63xhv4\r\nO1fnxqimFQ8E+4P208UewwI1VBNaFpEy9nXzrith1yrv8iIDGZ3RSAHHAhUAl2BQjxUjC8yykrmC\r\nouuEC/BYHPUCgYEA9+GghdabPd7LvKtcNrhXuXmUr7v6OuqC+VdMCz0HgmdRWVeOutRZT+ZxBxCB\r\ngLRJFnEj6EwoFhO3zwkyjMim4TwWeotUfI0o4KOuHiuzpnWRbqN/C/ohNWLx+2J6ASQ7zKTxvqhR\r\nkImog9/hWuWfBpKLZl6Ae1UlZAFMO/7PSSoEFgIUL8L6pqzTO+fVGLbpeoC8dydTwDI=\r\n-----END PRIVATE KEY-----\r\n"
       SERVER_PUBLIC_KEY_PEM: "-----BEGIN PUBLIC KEY-----\r\nMIIBuDCCASwGByqGSM44BAEwggEfAoGBAP1/U4EddRIpUt9KnC7s5Of2EbdSPO9EAMMeP4C2USZp\r\nRV1AIlH7WT2NWPq/xfW6MPbLm1Vs14E7gB00b/JmYLdrmVClpJ+f6AR7ECLCT7up1/63xhv4O1fn\r\nxqimFQ8E+4P208UewwI1VBNaFpEy9nXzrith1yrv8iIDGZ3RSAHHAhUAl2BQjxUjC8yykrmCouuE\r\nC/BYHPUCgYEA9+GghdabPd7LvKtcNrhXuXmUr7v6OuqC+VdMCz0HgmdRWVeOutRZT+ZxBxCBgLRJ\r\nFnEj6EwoFhO3zwkyjMim4TwWeotUfI0o4KOuHiuzpnWRbqN/C/ohNWLx+2J6ASQ7zKTxvqhRkImo\r\ng9/hWuWfBpKLZl6Ae1UlZAFMO/7PSSoDgYUAAoGBAPyjlUs1lWkyytQE7avu+2c+j0qhDrtX8McA\r\nMvN6ggUpfxPpjLqcJekxqKRJ5yMVfsnccah7Mh/ifmzdM03OuoeBpzmx18BGJgAh1U50StoMFtkk\r\n0t9RnI5QulVuBFcY+UcdTkSnRExG+Q1G6LvuISwgrYpfRiVbcmLq9JOub/P7\r\n-----END PUBLIC KEY-----\r\n"
@@ -28,4 +28,3 @@ networks:
     ipam:
       config:
         - subnet: 10.5.0.0/16
-          gateway: 10.5.0.1
