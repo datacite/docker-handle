@@ -20,7 +20,7 @@
 
   "log_save_config" = {
     "log_save_directory" = "logs"
-    "log_save_interval" = "Monthly"
+    "log_save_interval" = "Never"
   }
 
   "no_udp_resolution" = "yes"

@@ -25,7 +25,11 @@ RUN mkdir -p /opt/handle && tar xf /tmp/hsj-8.1.4.tar.gz -C /opt/handle --strip-
 COPY handle/ /home/handle/
 
 # Create the working directory for the handle server that will run in the container
-RUN mkdir -p /var/handle/svr
+RUN mkdir -p /var/handle/svr/logs
+
+# Redirect log files to stdout/stderr
+RUN ln -sf /dev/stdout /var/handle/svr/logs/access.log \
+    && ln -sf /dev/stderr /var/handle/svr/logs/error.log
 
 # Install Handle server as a service
 RUN mkdir /etc/service/handle
