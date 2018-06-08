@@ -1,2 +1,10 @@
 #!/bin/sh
-exec /opt/handle/bin/hdl-server /var/handle/svr 2>&1
+
+HANDLE_BIN="/opt/handle/bin"
+HANDLE_SVR="/var/handle/svr"
+
+# Build and configure the server
+python3 /home/handle/build.py $HANDLE_BIN $HANDLE_SVR
+
+# Start the handle server
+exec "$HANDLE_BIN/hdl-server" $HANDLE_SVR 2>&1

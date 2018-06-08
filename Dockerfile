@@ -10,13 +10,7 @@ CMD ["/sbin/my_init"]
 # Update installed APT packages
 RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 
-RUN apt-get install -y ntp wget openjdk-8-jre
-# RUN apt-get install -y ntp wget tzdata python-dev python-pip libxml2-dev \
-#     libxslt1-dev zlib1g-dev libffi-dev libssl-dev python3 python3-dev
-
-# # Fetch PIP install script and run
-# ADD "https://bootstrap.pypa.io/get-pip.py" /tmp/get-pip.py
-# RUN python3 /tmp/get-pip.py
+RUN apt-get install -y ntp wget openjdk-8-jre python3
 
 # Cleanup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -27,11 +21,11 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 ADD http://www.handle.net/hnr-source/hsj-8.1.4.tar.gz /tmp/
 RUN mkdir -p /opt/handle && tar xf /tmp/hsj-8.1.4.tar.gz -C /opt/handle --strip-components=1
 
+# Copy over the handle base configs and build script
+COPY handle/ /home/handle/
+
 # Create the working directory for the handle server that will run in the container
 RUN mkdir -p /var/handle/svr
-
-# Copy the base configuration files over
-COPY config/* /var/handle/svr/
 
 # Install Handle server as a service
 RUN mkdir /etc/service/handle

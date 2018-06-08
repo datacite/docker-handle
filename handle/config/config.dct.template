@@ -32,11 +32,11 @@
 
   "server_config" = {
     "server_admins" = (
-      "300:200/23"
+      "$SERVER_ADMIN"
     )
 
     "replication_admins" = (
-      "300:200/23"
+      "$SERVER_ADMIN"
     )
 
     "max_session_time" = "86400000"
@@ -45,7 +45,7 @@
     "server_admin_full_access" = "yes"
     "trace_resolution" = "no"
     "case_sensitive" = "no"
-    "allow_recursion" = "yes"
+    "allow_recursion" = "$ALLOW_RECURSION"
   }
 
 }

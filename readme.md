@@ -1,2 +1,1 @@
-# Grasp - Handle Server controller for docker friendly containers.
-
+# Docker version of a Handle Server
