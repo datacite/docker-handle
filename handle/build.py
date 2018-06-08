@@ -16,7 +16,8 @@ OUT_DIR = sys.argv[2]
 
 # Config options
 config = {
-    'SERVER_ADMIN': os.getenv('SERVER_ADMIN'),
+    'SERVER_ADMINS': ' '.join(['"%s"'%s for s in os.getenv('SERVER_ADMINS').split(" ")]),
+    'REPLICATION_ADMINS': ' '.join(['"%s"'%s for s in os.getenv('REPLICATION_ADMINS').split(" ")]),
     'HOST_IP': os.getenv('HOST_IP'),
     'ALLOW_RECURSION': os.getenv('ALLOW_RECURSION', 'no'),
     'SERVER_PRIVATE_KEY_PEM': os.getenv('SERVER_PRIVATE_KEY_PEM', '').encode('ASCII'), # Explict convert to byte string

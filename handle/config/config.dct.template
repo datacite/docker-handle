@@ -32,11 +32,11 @@
 
   "server_config" = {
     "server_admins" = (
-      "$SERVER_ADMIN"
+      $SERVER_ADMINS
     )
 
     "replication_admins" = (
-      "$SERVER_ADMIN"
+      $REPLICATION_ADMINS
     )
 
     "max_session_time" = "86400000"
