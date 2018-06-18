@@ -26,7 +26,7 @@ config = {
     'ALLOW_RECURSION': os.getenv('ALLOW_RECURSION', 'no'),
     'SERVER_ADMINS': ' '.join(['"%s"'%s for s in os.getenv('SERVER_ADMINS').split(" ")]),
     'REPLICATION_ADMINS': ' '.join(['"%s"'%s for s in os.getenv('REPLICATION_ADMINS').split(" ")]),
-    'HANDLE_HOST_IP': os.getenv('HANDLE_HOST_IP'),
+    'HANDLE_HOST_IP': os.getenv('HANDLE_HOST_IP', '0.0.0.0'),
     'SERVER_PRIVATE_KEY_PEM': os.getenv('SERVER_PRIVATE_KEY_PEM', '').encode('ASCII'), # Explict convert to byte string
     'SERVER_PUBLIC_KEY_PEM': os.getenv('SERVER_PUBLIC_KEY_PEM', '').encode('ASCII') # Explict convert to byte string
 }
