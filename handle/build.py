@@ -22,7 +22,7 @@ config = {
     'MAX_AUTH_TIME': os.getenv('MAX_AUTH_TIME', 60000),
     'THIS_SERVER_ID': os.getenv('THIS_SERVER_ID', 1),
     'TRACE_RESOLUTION': os.getenv('TRACE_RESOLUTION', 'no'),
-    'ALLOW_LIST_HDLS': os.getenv('TRACE_RESOLUTION', 'yes'),
+    'ALLOW_LIST_HDLS': os.getenv('ALLOW_LIST_HDLS', 'yes'),
     'ALLOW_RECURSION': os.getenv('ALLOW_RECURSION', 'no'),
     'SERVER_ADMINS': ' '.join(['"%s"'%s for s in os.getenv('SERVER_ADMINS').split(" ")]),
     'REPLICATION_ADMINS': ' '.join(['"%s"'%s for s in os.getenv('REPLICATION_ADMINS').split(" ")]),
