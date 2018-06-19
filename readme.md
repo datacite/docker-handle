@@ -31,7 +31,10 @@ Configuration follows the same rules as the main handle configuration however wi
 The PRIVATE_KEY and PUBLIC_KEY need to be in pksc8 format, below is an example that makes ready for usage in the environment variables
 
 Generate keypair
+
     ssh-keygen -f mykey.pem
+
 Get it in a format for PKCS8 and put in explicit new lines ready for env var
+
     openssl pkcs8 -topk8 -in mykey.pem -nocrypt | sed ':a;N;$!ba;s/\n/\\r\\n/g'
     openssl pkcs8 -topk8 -in mykey.pem -nocrypt | openssl pkey -pubout | sed ':a;N;$!ba;s/\n/\\r\\n/g'
