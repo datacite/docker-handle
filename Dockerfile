@@ -1,5 +1,5 @@
 
-FROM phusion/baseimage:0.10.0
+FROM phusion/baseimage:0.10.1
 LABEL Name=handle_svr Version=0.0.1
 
 ## Image config
@@ -10,7 +10,7 @@ CMD ["/sbin/my_init"]
 # Update installed APT packages
 RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 
-RUN apt-get install -y ntp wget openjdk-8-jre python3
+RUN apt-get install -y ntp wget openjdk-8-jre python3 mysql-client libmysql-java
 
 # Cleanup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -20,6 +20,9 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # Get the handle server package and put it in the container
 ADD http://www.handle.net/hnr-source/hsj-8.1.4.tar.gz /tmp/
 RUN mkdir -p /opt/handle && tar xf /tmp/hsj-8.1.4.tar.gz -C /opt/handle --strip-components=1
+
+# Add the jdbc connector so it gets loaded
+RUN ln -s /usr/share/java/mysql-connector-java.jar /opt/handle/lib/mysql-connector-java.jar
 
 # Copy over the handle base configs and build script
 COPY handle/ /home/handle/
