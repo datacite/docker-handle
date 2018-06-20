@@ -25,6 +25,12 @@ Configuration follows the same rules as the main handle configuration however wi
 | ALLOW_RECURSION               | no            | No        | Allow recursive lookup outside of this handle server into global handle network.
 | SERVER_PRIVATE_KEY_PEM        | None          | Yes       | PEM PKCS8 format private key for encryption on the server.
 | SERVER_PUBLIC_KEY_PEM         | None          | Yes       | PEM PKCS8 format public key for encryption on the server.
+| STORAGE_TYPE                  | None          | No        | Empty defaults to built-in storage. Other main option is "sql"
+| SQL_URL                       | None          | No        | This setting should specify the JDBC URL that is used to connect to the SQL database.
+| SQL_DRIVER                    | com.mysql.jdbc.Driver          | No        | This is the name of a Java class that contains the driver for the JDBC connection.
+| SQL_LOGIN                     | root          | No        | The user name that should be used by the handle server to connect and perform operations on the database.
+| SQL_PASSWD                    | None          | No        | The password that should be used by the handle server to connect and perform operations on the database.
+| SQL_READ_ONLY                 | no            | No        | Boolean setting for allowing writes to database or not.
 
 ## Creating a PEM keypair
 
