@@ -47,6 +47,16 @@
     "case_sensitive" = "$CASE_SENSITIVE"
     "allow_recursion" = "$ALLOW_RECURSION"
     "allow_list_hdls" = "$ALLOW_LIST_HDLS"
+
+    storage_type = "$STORAGE_TYPE"
+
+    sql_settings = {
+      sql_url = "$SQL_URL"
+      sql_driver = "$SQL_DRIVER"
+      sql_login = "$SQL_LOGIN"
+      sql_passwd = "$SQL_PASSWD"
+      sql_read_only = "$SQL_READ_ONLY"
+    }
   }
 
 }
