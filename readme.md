@@ -31,6 +31,7 @@ Configuration follows the same rules as the main handle configuration however wi
 | SQL_LOGIN                     | root          | No        | The user name that should be used by the handle server to connect and perform operations on the database.
 | SQL_PASSWD                    | None          | No        | The password that should be used by the handle server to connect and perform operations on the database.
 | SQL_READ_ONLY                 | no            | No        | Boolean setting for allowing writes to database or not.
+| ALLOW_NA_ADMINS               | yes           | no        | To allow global handle server admins access to this handle server.
 
 ## Creating a PEM keypair
 

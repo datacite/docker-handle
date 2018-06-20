@@ -34,7 +34,8 @@ config = {
     'SQL_DRIVER': os.getenv('SQL_DRIVER', 'com.mysql.jdbc.Driver'),
     'SQL_LOGIN': os.getenv('SQL_LOGIN', 'root'),
     'SQL_PASSWD': os.getenv('SQL_PASSWD', ''),
-    'SQL_READ_ONLY': os.getenv('SQL_READ_ONLY', 'no')
+    'SQL_READ_ONLY': os.getenv('SQL_READ_ONLY', 'no'),
+    'ALLOW_NA_ADMINS': os.getenv('ALLOW_NA_ADMINS', 'yes')
 }
 
 # Create private / public keys based on config using hdl-convert-key tool
