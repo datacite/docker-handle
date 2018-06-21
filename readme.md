@@ -14,8 +14,8 @@ Configuration follows the same rules as the main handle configuration however wi
 | ------                        | -------       | --------  | -----------
 | HANDLE_HOST_IP                | 0.0.0.0       | No        | Public handle host ip used for siteinfo
 | SERVER_ADMIN_FULL_ACCESS      | yes           | No        | Admins listed in SERVER_ADMINS will have full permissions over all handles on the server
-| SERVER_ADMINS                 | None          | No        | A list of handle admins comma seperated e.g. ADMIN1,ADMIN2,ADMIN3
-| REPLICATION_ADMINS            | None          | No        | A list of handle admins for replication comma seperated e.g. "ADMIN1,ADMIN2,ADMIN3"
+| SERVER_ADMINS                 | None          | No        | A list of handle admins space seperated e.g. ADMIN1 ADMIN2 ADMIN3
+| REPLICATION_ADMINS            | None          | No        | A list of handle admins for replication space seperated e.g. "ADMIN1 ADMIN2 ADMIN3"
 | CASE_SENSITIVE                | no            | No        | Are handles case sensitive
 | MAX_SESSION_TIME              | 86400000      | No        | Max authenticated client session time in ms.
 | MAX_AUTH_TIME                 | 60000         | No        | Max time to wait for for client to respond to auth challenge.
