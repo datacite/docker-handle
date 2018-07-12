@@ -21,13 +21,28 @@ services:
       SQL_PASSWD: ''
       ALLOW_NA_ADMINS: 'no'
       TRACE_RESOLUTION: 'yes'
+      TEMPLATE_NS_OVERRIDE: 'yes'
+    networks:
+        network:
+          ipv4_address: 172.20.0.3
+
   handle_db:
       environment:
         MYSQL_DATABASE: handle
         MYSQL_USER: root
         MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+        MYSQL_ROOT_HOST: '%'
       image: mysql:5.7
       volumes:
         - ./create-scripts:/docker-entrypoint-initdb.d
       ports:
         - "3306:3306"
+      networks:
+        network:
+          ipv4_address: 172.20.0.2
+
+networks:
+  network:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
