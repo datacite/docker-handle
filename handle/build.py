@@ -35,7 +35,8 @@ config = {
     'SQL_LOGIN': os.getenv('SQL_LOGIN', 'root'),
     'SQL_PASSWD': os.getenv('SQL_PASSWD', ''),
     'SQL_READ_ONLY': os.getenv('SQL_READ_ONLY', 'no'),
-    'ALLOW_NA_ADMINS': os.getenv('ALLOW_NA_ADMINS', 'yes')
+    'ALLOW_NA_ADMINS': os.getenv('ALLOW_NA_ADMINS', 'yes'),
+    'TEMPLATE_NS_OVERRIDE': os.getenv('TEMPLATE_NS_OVERRIDE', 'no')
 }
 
 # Create private / public keys based on config using hdl-convert-key tool

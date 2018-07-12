@@ -44,6 +44,7 @@
     "max_auth_time" = "$MAX_AUTH_TIME"
     "server_admin_full_access" = "$SERVER_ADMIN_FULL_ACCESS"
     "allow_na_admins" = "$ALLOW_NA_ADMINS"
+    "template_ns_override" = "$TEMPLATE_NS_OVERRIDE"
     "trace_resolution" = "$TRACE_RESOLUTION"
     "case_sensitive" = "$CASE_SENSITIVE"
     "allow_recursion" = "$ALLOW_RECURSION"
