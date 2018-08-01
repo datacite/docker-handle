@@ -4,8 +4,8 @@ services:
   handle_server:
     image: handle_svr
     build:
-      context: .
-      dockerfile: ../../Dockerfile
+      context: ../../
+      dockerfile: Dockerfile
     restart: always
     ports:
       - "2641:2641/udp"
