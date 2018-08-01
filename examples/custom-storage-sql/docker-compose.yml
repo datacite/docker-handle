@@ -20,6 +20,7 @@ services:
       SQL_LOGIN: 'root'
       SQL_PASSWD: ''
       ALLOW_NA_ADMINS: 'no'
+      SERVER_ADMIN_FULL_ACCESS: 'yes'
       TRACE_RESOLUTION: 'yes'
       TEMPLATE_NS_OVERRIDE: 'yes'
     networks:
