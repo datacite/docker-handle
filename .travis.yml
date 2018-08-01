@@ -1,0 +1,13 @@
+language: python
+python:
+  - "3.6"
+
+services:
+  - docker
+
+script:
+  - ./travis/docker.sh
+
+notifications:
+  slack: datacite:Wt8En0ALoTA6Kjc5EOKNDWxN
+  email: false
