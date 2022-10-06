@@ -1,13 +1,22 @@
 # Docker version of a Handle Server
 
-This is a docker version of the handle server software at http://www.handle.net/
+This is a docker version of the handle server software at <http://www.handle.net/>
 All information for how to use a handle server should be via the handle.net
 server documentation and support systems.
 
 This is a docker image with an embedded configuration script that is run on docker
 start to load default settings from environment variables.
 
+## Starting
+
+Use Docker compose to start the server.
+
+    docker compose up
+
+For for overriding evn variables see [Environment variables in Compose](https://docs.docker.com/compose/environment-variables/).
+
 # Configuration
+
 Configuration follows the same rules as the main handle configuration however with environments, see official documentation for more detailed configuration details.
 
 | Config                        | Default       | Required  | Description
@@ -39,7 +48,7 @@ The PRIVATE_KEY and PUBLIC_KEY need to be in pksc8 format, below is an example t
 
 Generate keypair
 
-    ssh-keygen -f mykey.pem
+    ssh-keygen -m pkcs8 -f mykey.pem
 
 Get it in a format for PKCS8 and put in explicit new lines ready for env var
 
