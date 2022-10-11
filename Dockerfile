@@ -1,6 +1,6 @@
 
-FROM phusion/baseimage:0.10.1
-LABEL Name=handle_svr Version=0.0.1
+FROM phusion/baseimage:jammy-1.0.1
+LABEL Name=handle_svr Version=0.0.2
 
 ## Image config
 
@@ -8,9 +8,10 @@ LABEL Name=handle_svr Version=0.0.1
 CMD ["/sbin/my_init"]
 
 # Update installed APT packages
+RUN add-apt-repository ppa:openjdk-r/ppa
 RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 
-RUN apt-get install -y ntp wget openjdk-8-jre python3 mysql-client libmysql-java
+RUN apt-get install -y ntp wget openjdk-11-jdk python3 mysql-client libmariadb-java
 
 # Cleanup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -18,11 +19,11 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 ## Handle Server setup
 
 # Get the handle server package and put it in the container
-ADD http://www.handle.net/hnr-source/handle-9.0.0-distribution.tar.gz /tmp/
-RUN mkdir -p /opt/handle && tar xf /tmp/handle-9.0.0-distribution.tar.gz -C /opt/handle --strip-components=1
+ADD http://www.handle.net/hnr-source/handle-9.3.0-distribution.tar.gz /tmp/
+RUN mkdir -p /opt/handle && tar xf /tmp/handle-9.3.0-distribution.tar.gz -C /opt/handle --strip-components=1
 
 # Add the jdbc connector so it gets loaded
-RUN ln -s /usr/share/java/mysql-connector-java.jar /opt/handle/lib/mysql-connector-java.jar
+RUN ln -s /usr/share/java/mariadb-java-client.jar /opt/handle/lib/mariadb-java-client.jar
 
 # Copy over the handle base configs and build script
 COPY handle/ /home/handle/
