@@ -31,7 +31,7 @@ config = {
     'SERVER_PUBLIC_KEY_PEM': os.getenv('SERVER_PUBLIC_KEY_PEM', '').encode('ASCII'), # Explict convert to byte string
     'STORAGE_TYPE': os.getenv('STORAGE_TYPE', ''),
     'SQL_URL': os.getenv('SQL_URL', ''),
-    'SQL_DRIVER': os.getenv('SQL_DRIVER', 'com.mysql.jdbc.Driver'),
+    'SQL_DRIVER': os.getenv('SQL_DRIVER', 'org.mariadb.jdbc.Driver'),
     'SQL_LOGIN': os.getenv('SQL_LOGIN', 'root'),
     'SQL_PASSWD': os.getenv('SQL_PASSWD', ''),
     'SQL_READ_ONLY': os.getenv('SQL_READ_ONLY', 'no'),
