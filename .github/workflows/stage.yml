@@ -1,12 +1,13 @@
-name: Build stage/test
+name: Deploy to staging
 on:
   push:
     branches:
-      - "master"
+      - "main"
 
 jobs:
   build:
     uses: ./.github/workflows/build_docker.yml
     with:
       image: ${{ github.repository }}
+      image_tag: latest
       dockerfile: ./Dockerfile

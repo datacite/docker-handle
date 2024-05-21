@@ -8,4 +8,5 @@ jobs:
     uses: ./.github/workflows/build_docker.yml
     with:
       image: ${{ github.repository }}
+      image_tag: ${{ github.ref_name }}
       dockerfile: ./Dockerfile
