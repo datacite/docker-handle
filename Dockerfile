@@ -1,5 +1,5 @@
 
-FROM phusion/baseimage:jammy-1.0.1
+FROM phusion/baseimage:jammy-1.0.4
 LABEL Name=handle_svr Version=0.0.2
 
 ## Image config
@@ -19,8 +19,8 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 ## Handle Server setup
 
 # Get the handle server package and put it in the container
-ADD http://www.handle.net/hnr-source/handle-9.3.0-distribution.tar.gz /tmp/
-RUN mkdir -p /opt/handle && tar xf /tmp/handle-9.3.0-distribution.tar.gz -C /opt/handle --strip-components=1
+ADD http://handle.net/hnr-source/handle-9.3.1-distribution.tar.gz /tmp/
+RUN mkdir -p /opt/handle && tar xf /tmp/handle-9.3.1-distribution.tar.gz -C /opt/handle --strip-components=1
 
 # Add the jdbc connector so it gets loaded
 RUN ln -s /usr/share/java/mariadb-java-client.jar /opt/handle/lib/mariadb-java-client.jar
