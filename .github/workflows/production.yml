@@ -1,0 +1,11 @@
+name: Build production
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    uses: ./.github/workflows/build_docker.yml
+    with:
+      image: ${{ github.repository }}
+      dockerfile: ./Dockerfile

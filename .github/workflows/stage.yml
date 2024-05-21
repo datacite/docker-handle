@@ -1,0 +1,12 @@
+name: Build stage/test
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    uses: ./.github/workflows/build_docker.yml
+    with:
+      image: ${{ github.repository }}
+      dockerfile: ./Dockerfile
