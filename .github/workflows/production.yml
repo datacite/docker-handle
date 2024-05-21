@@ -5,6 +5,7 @@ on:
 
 jobs:
   build:
+    secrets: inherit
     uses: ./.github/workflows/build_docker.yml
     with:
       image: ${{ github.repository }}
